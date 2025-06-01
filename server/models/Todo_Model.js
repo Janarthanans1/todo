@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
-import connectDb from "../config/DataBase";
 
-const Todoschema = new mongoose.Schema({
+const TodoSchema = new mongoose.Schema({
   task: {
     type: String,
     required: true,
@@ -11,3 +10,7 @@ const Todoschema = new mongoose.Schema({
     required: true,
   },
 });
+
+const TodoModel = mongoose.model("Todo List", TodoSchema);
+
+export default TodoModel;
