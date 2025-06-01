@@ -7,7 +7,10 @@ const TodoSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: true,
+    default: "pending",
+  },
+  deadline: {
+    type: String,
   },
 });
 

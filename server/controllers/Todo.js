@@ -2,11 +2,11 @@ import TodoModel from "../models/Todo_Model.js";
 
 export const createTodo = async (req, res) => {
   try {
-    const { task, status } = req.body;
-    if (!task || !status) {
+    const { task, deadline } = req.body;
+    if (!task || !deadline) {
       return res.json({ message: "All Fields Are Required" });
     }
-    const newTodo = await TodoModel.create({ task, status });
+    const newTodo = await TodoModel.create({ task, deadline });
     newTodo.save();
     res.status(201).json({ Message: "New Todo Created" });
   } catch (error) {
